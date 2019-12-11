@@ -72,7 +72,17 @@
         [Parameter(Mandatory)]
         [AllowEmptyString()]
         [string]
-        $Addr,
+        $Mobile,
+
+        [Parameter(Mandatory)]
+        [AllowEmptyString()]
+        [string]
+        $Adr,
+
+        [Parameter(Mandatory)]
+        [AllowEmptyString()]
+        [string]
+        $City,
         
         [ValidateRange(10,2000)]
         [int]
@@ -97,8 +107,9 @@ TITLE:$title
 ORG:$Company
 URL:$URL
 EMAIL;TYPE=internet:$Email
-TEL;TYPE=voice,work,pref:$Tel
-ADR:$Adr
+TEL;TYPE=work:$Tel
+TEL;TYPE=cell:$Mobile
+ADR;TYPE=WORK,PREF:;;$Adr;$City
 END:VCARD
 "@
     
